@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="RailReserve - modern railway reservation frontend">
+  <title>RailReserve | Railway Reservation</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Poppins:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <div class="app-shell">
+    <!-- NAVBAR -->
+    <header class="navbar">
+      <a class="brand" href="#" onclick="showSection('home'); return false;">
+        <span class="brand-icon"><i class="fa-solid fa-train"></i></span>
+        <span>
+          <strong>RailReserve</strong>
+          <small>Smart Railway Booking</small>
+        </span>
+      </a>
+
+      <button class="mobile-menu" aria-label="Open menu" onclick="toggleMenu()">
+        <i class="fa-solid fa-bars"></i>
+      </button>
+
+      <nav class="menu" id="main-menu">
+        <button class="nav-link active" data-section="home" onclick="showSection('home')"><i class="fa-solid fa-house"></i> Home</button>
+        <button class="nav-link" data-section="search" onclick="showSection('search')"><i class="fa-solid fa-magnifying-glass"></i> Search</button>
+        <button class="nav-link" data-section="pnr" onclick="showSection('pnr')"><i class="fa-solid fa-ticket"></i> PNR</button>
+        <button class="nav-link" data-section="bookings" onclick="showSection('bookings')"><i class="fa-solid fa-suitcase-rolling"></i> My Bookings</button>
+        <button class="nav-link" data-section="login" onclick="showSection('login')"><i class="fa-solid fa-right-to-bracket"></i> Login</button>
+        <button class="nav-link" data-section="contact" onclick="showSection('contact')"><i class="fa-solid fa-headset"></i> Contact</button>
+      </nav>
+
+      <button class="theme-toggle" id="theme-toggle" onclick="toggleTheme()" title="Toggle theme">
+        <i class="fa-solid fa-moon"></i>
+      </button>
+    </header>
+
+    <main>
+      <!-- HOME -->
+      <section id="home" class="page-section active-section">
+        <div class="hero">
+          <div class="hero-overlay"></div>
+          <div class="hero-content">
+            <span class="eyebrow"><i class="fa-solid fa-bolt"></i> Faster. Simpler. Smarter.</span>
+            <h1>Journey begins with a <span>single search.</span></h1>
+            <p>Search trains, compare fares, reserve your seat and manage your tickets — all from one clean railway reservation dashboard.</p>
+            <div class="hero-actions">
+              <button class="primary-btn" onclick="showSection('search')">
+                Search Trains <i class="fa-solid fa-arrow-right"></i>
+              </button>
+              <button class="glass-btn" onclick="showSection('pnr')">
+                <i class="fa-solid fa-location-dot"></i> Check PNR
+              </button>
+            </div>
+            <div class="trust-row">
+              <span><i class="fa-solid fa-shield-halved"></i> Secure demo</span>
+              <span><i class="fa-solid fa-clock"></i> Instant confirmation</span>
+              <span><i class="fa-solid fa-mobile-screen-button"></i> Mobile friendly</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="stats-grid">
+          <div class="stat-card"><span class="stat-icon blue"><i class="fa-solid fa-train"></i></span><div><strong>120+</strong><small>Demo Trains</small></div></div>
+          <div class="stat-card"><span class="stat-icon green"><i class="fa-solid fa-route"></i></span><div><strong>50+</strong><small>Routes</small></div></div>
+          <div class="stat-card"><span class="stat-icon orange"><i class="fa-solid fa-ticket"></i></span><div><strong>24/7</strong><small>Booking Access</small></div></div>
+          <div class="stat-card"><span class="stat-icon purple"><i class="fa-solid fa-headset"></i></span><div><strong>Support</strong><small>When you need it</small></div></div>
+        </div>
+
+        <div class="section-heading">
+          <div>
+            <span class="section-kicker">WHY RAILRESERVE</span>
+            <h2>Everything you need for your journey</h2>
+          </div>
+          <button class="text-btn" onclick="showSection('search')">Start booking <i class="fa-solid fa-arrow-right"></i></button>
+        </div>
+
+        <div class="feature-grid">
+          <article class="feature-card">
+            <div class="feature-icon"><i class="fa-solid fa-magnifying-glass"></i></div>
+            <h3>Smart train search</h3>
+            <p>Filter demo trains by route, date and class with instant results.</p>
+          </article>
+          <article class="feature-card">
+            <div class="feature-icon green-icon"><i class="fa-solid fa-chair"></i></div>
+            <h3>Seat & fare details</h3>
+            <p>See availability, travel time and estimated fare before booking.</p>
+          </article>
+          <article class="feature-card">
+            <div class="feature-icon orange-icon"><i class="fa-solid fa-file-invoice"></i></div>
+            <h3>Digital ticket</h3>
+            <p>Get a generated PNR and keep your bookings inside the browser.</p>
+          </article>
+          <article class="feature-card">
+            <div class="feature-icon purple-icon"><i class="fa-solid fa-rotate-left"></i></div>
+            <h3>Easy cancellation</h3>
+            <p>Cancel demo bookings from My Bookings and instantly update storage.</p>
+          </article>
+        </div>
+
+        <div class="section-heading compact-heading">
+          <div>
+            <span class="section-kicker">TRAVEL INSPIRATION</span>
+            <h2>Popular destinations</h2>
+          </div>
+        </div>
+
+        <div class="destination-grid">
+          <article class="destination-card goa">
+            <div><span>Beach escape</span><h3>Goa</h3><p>Sun, sand & sea</p></div>
+          </article>
+          <article class="destination-card kashmir">
+            <div><span>Mountain retreat</span><h3>Kashmir</h3><p>Valleys & lakes</p></div>
+          </article>
+          <article class="destination-card manali">
+            <div><span>Adventure trip</span><h3>Manali</h3><p>Mountains & snow</p></div>
+          </article>
+        </div>
+      </section>
+
+      <!-- SEARCH -->
+      <section id="search" class="page-section">
+        <div class="page-header">
+          <div><span class="section-kicker">PLAN YOUR JOURNEY</span><h2>Search Trains</h2><p>Choose your route and compare available demo trains.</p></div>
+          <span class="header-badge"><i class="fa-solid fa-wand-magic-sparkles"></i> Live demo</span>
+        </div>
+
+        <div class="search-panel">
+          <div class="search-field">
+            <label><i class="fa-solid fa-location-dot"></i> From</label>
+            <input list="stations" id="from" placeholder="e.g. Bhopal">
+          </div>
+          <button class="swap-btn" onclick="swapStations()" title="Swap stations"><i class="fa-solid fa-arrow-right-arrow-left"></i></button>
+          <div class="search-field">
+            <label><i class="fa-solid fa-location-dot"></i> To</label>
+            <input list="stations" id="to" placeholder="e.g. Delhi">
+          </div>
+          <div class="search-field">
+            <label><i class="fa-regular fa-calendar"></i> Date</label>
+            <input type="date" id="date">
+          </div>
+          <div class="search-field">
+            <label><i class="fa-solid fa-users"></i> Class</label>
+            <select id="search-class">
+              <option value="All">All Classes</option>
+              <option>Sleeper</option><option>3A</option><option>2A</option><option>1A</option>
+            </select>
+          </div>
+          <button class="primary-btn search-btn" onclick="searchTrains()"><i class="fa-solid fa-magnifying-glass"></i> Search</button>
+        </div>
+
+        <datalist id="stations">
+          <option value="Bhopal"><option value="Indore"><option value="Delhi"><option value="Mumbai">
+          <option value="Pune"><option value="Nagpur"><option value="Hyderabad"><option value="Chennai">
+          <option value="Kolkata"><option value="Ayodhya"><option value="Lucknow"><option value="Jaipur">
+        </datalist>
+
+        <div class="quick-routes">
+          <span>Popular:</span>
+          <button onclick="setRoute('Bhopal','Delhi')">Bhopal → Delhi</button>
+          <button onclick="setRoute('Bhopal','Mumbai')">Bhopal → Mumbai</button>
+          <button onclick="setRoute('Delhi','Lucknow')">Delhi → Lucknow</button>
+          <button onclick="setRoute('Mumbai','Pune')">Mumbai → Pune</button>
+        </div>
+
+        <div id="train-results" class="results-area">
+          <div class="empty-state">
+            <i class="fa-solid fa-train"></i>
+            <h3>Ready when you are</h3>
+            <p>Enter your journey details and click Search Trains.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- PASSENGER -->
+      <section id="passenger" class="page-section">
+        <div class="page-header">
+          <div><span class="section-kicker">STEP 2 OF 2</span><h2>Passenger Details</h2><p>Complete the passenger information to generate your ticket.</p></div>
+        </div>
+        <div class="booking-layout">
+          <div class="form-card">
+            <div class="form-card-title"><span class="step-number">2</span><div><h3>Passenger information</h3><p>All fields are required.</p></div></div>
+            <div class="form-grid">
+              <div class="field full"><label>Full Name</label><input type="text" id="pname" placeholder="Enter passenger name"></div>
+              <div class="field"><label>Age</label><input type="number" id="page" min="1" max="120" placeholder="Age"></div>
+              <div class="field"><label>Gender</label><select id="pgender"><option value="">Select Gender</option><option>Male</option><option>Female</option><option>Other</option></select></div>
+              <div class="field"><label>Berth Preference</label><select id="pberth"><option value="">Select preference</option><option>Lower</option><option>Middle</option><option>Upper</option><option>Side Lower</option><option>Side Upper</option><option>No Preference</option></select></div>
+              <div class="field"><label>Travel Class</label><select id="pclass"><option value="">Select class</option><option>Sleeper</option><option>3A</option><option>2A</option><option>1A</option></select></div>
+            </div>
+            <button class="primary-btn full-btn" onclick="confirmBooking()">Confirm & Generate Ticket <i class="fa-solid fa-check"></i></button>
+            <button class="secondary-btn full-btn" onclick="showSection('search')">Back to search</button>
+          </div>
+          <aside id="booking-summary" class="summary-card"></aside>
+        </div>
+      </section>
+
+      <!-- PNR -->
+      <section id="pnr" class="page-section">
+        <div class="center-header"><span class="section-kicker">TICKET TRACKER</span><h2>Check PNR Status</h2><p>Enter the six-digit PNR generated by this demo.</p></div>
+        <div class="pnr-box">
+          <div class="pnr-icon"><i class="fa-solid fa-ticket"></i></div>
+          <input type="text" id="pnr-number" maxlength="6" inputmode="numeric" placeholder="Enter 6-digit PNR">
+          <button class="primary-btn" onclick="checkPNR()">Check Status</button>
+          <div id="pnr-result"></div>
+        </div>
+      </section>
+
+      <!-- BOOKINGS -->
+      <section id="bookings" class="page-section">
+        <div class="page-header">
+          <div><span class="section-kicker">YOUR JOURNEYS</span><h2>My Bookings</h2><p>All tickets saved in this browser.</p></div>
+          <div class="booking-count" id="booking-count">0 Tickets</div>
+        </div>
+        <div id="booking-list" class="booking-grid"></div>
+      </section>
+
+      <!-- LOGIN -->
+      <section id="login" class="page-section auth-section">
+        <div class="auth-card">
+          <div class="auth-brand"><span class="brand-icon"><i class="fa-solid fa-train"></i></span><h2>Welcome back</h2><p>Login to your RailReserve demo account.</p></div>
+          <div class="field"><label>Username</label><input type="text" id="login-username" placeholder="Enter username"></div>
+          <div class="field"><label>Password</label><input type="password" id="login-password" placeholder="Enter password"></div>
+          <button class="primary-btn full-btn" onclick="loginUser()">Login <i class="fa-solid fa-arrow-right"></i></button>
+          <p id="login-result" class="form-message"></p>
+          <p class="switch-auth">New here? <button onclick="showSection('register')">Create an account</button></p>
+        </div>
+      </section>
+
+      <!-- REGISTER -->
+      <section id="register" class="page-section auth-section">
+        <div class="auth-card">
+          <div class="auth-brand"><span class="brand-icon"><i class="fa-solid fa-user-plus"></i></span><h2>Create account</h2><p>Register a local demo account.</p></div>
+          <div class="field"><label>Username</label><input type="text" id="reg-username" placeholder="Choose username"></div>
+          <div class="field"><label>Password</label><input type="password" id="reg-password" placeholder="Choose password"></div>
+          <div class="field"><label>Confirm Password</label><input type="password" id="reg-confirm" placeholder="Re-enter password"></div>
+          <button class="primary-btn full-btn" onclick="registerUser()">Create Account <i class="fa-solid fa-user-check"></i></button>
+          <p id="register-result" class="form-message"></p>
+          <p class="switch-auth">Already registered? <button onclick="showSection('login')">Login</button></p>
+        </div>
+      </section>
+
+      <!-- CONTACT -->
+      <section id="contact" class="page-section">
+        <div class="page-header"><div><span class="section-kicker">HELP CENTER</span><h2>Contact & Support</h2><p>Useful links for railway-ticket related assistance.</p></div></div>
+        <div class="contact-grid">
+          <div class="contact-card main-contact">
+            <div class="contact-icon"><i class="fa-solid fa-headset"></i></div>
+            <h3>Railway ticket support</h3>
+            <p>For queries related to tickets booked through official railway channels, use the official support resources.</p>
+            <a class="contact-link" href="https://equery.irctc.co.in/" target="_blank" rel="noopener">Open official enquiry portal <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+            <div class="support-row"><i class="fa-solid fa-phone"></i><div><strong>Helpline</strong><span>14646 within India</span></div></div>
+            <div class="support-row"><i class="fa-solid fa-envelope"></i><div><strong>Email</strong><span>etickets@irctc.co.in</span></div></div>
+          </div>
+          <div class="contact-card">
+            <div class="contact-icon green-icon"><i class="fa-solid fa-circle-info"></i></div>
+            <h3>About this project</h3>
+            <p>RailReserve is a frontend portfolio/demo project. Bookings and login data are stored locally in your browser.</p>
+            <ul class="check-list">
+              <li><i class="fa-solid fa-check"></i> Responsive interface</li>
+              <li><i class="fa-solid fa-check"></i> Dynamic train search</li>
+              <li><i class="fa-solid fa-check"></i> PNR generation</li>
+              <li><i class="fa-solid fa-check"></i> Local booking management</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div><strong><i class="fa-solid fa-train"></i> RailReserve</strong><span>Modern railway reservation frontend</span></div>
+      <p>© 2026 RailReserve. Demo project — not an official railway booking website.</p>
+    </footer>
+  </div>
+
+  <div id="toast-container"></div>
+  <script src="script.js"></script>
+</body>
+</html>
