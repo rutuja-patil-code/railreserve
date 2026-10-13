@@ -18,7 +18,9 @@
     <!-- NAVBAR -->
     <header class="navbar">
       <a class="brand" href="#" onclick="showSection('home'); return false;">
-        <span class="brand-icon"><i class="fa-solid fa-train"></i></span>
+<span class="brand-icon">
+    <img src="images/irctc-logo-png_seeklogo-184098.png" alt="RailReserve logo">
+</span>
         <span>
           <strong>RailReserve</strong>
           <small>Smart Railway Booking</small>
@@ -114,17 +116,51 @@
           </div>
         </div>
 
-        <div class="destination-grid">
-          <article class="destination-card goa">
-            <div><span>Beach escape</span><h3>Goa</h3><p>Sun, sand & sea</p></div>
-          </article>
-          <article class="destination-card kashmir">
-            <div><span>Mountain retreat</span><h3>Kashmir</h3><p>Valleys & lakes</p></div>
-          </article>
-          <article class="destination-card manali">
-            <div><span>Adventure trip</span><h3>Manali</h3><p>Mountains & snow</p></div>
-          </article>
+     <div class="destination-grid">
+
+    <article class="destination-card goa">
+        <div>
+            <span>Beach escape</span>
+            <h3>Goa</h3>
+            <p>Sun, sand &amp; sea</p>
+            <a href="https://www.irctctourism.com/"
+               target="_blank"
+               rel="noopener noreferrer"
+               class="explore-link">
+                Explore More <i class="fa-solid fa-arrow-right"></i>
+            </a>
         </div>
+    </article>
+
+    <article class="destination-card kashmir">
+        <div>
+            <span>Mountain retreat</span>
+            <h3>Kashmir</h3>
+            <p>Valleys &amp; lakes</p>
+            <a href="https://www.irctctourism.com/"
+               target="_blank"
+               rel="noopener noreferrer"
+               class="explore-link">
+                Explore More <i class="fa-solid fa-arrow-right"></i>
+            </a>
+        </div>
+    </article>
+
+    <article class="destination-card manali">
+        <div>
+            <span>Adventure trip</span>
+            <h3>Manali</h3>
+            <p>Mountains &amp; snow</p>
+            <a href="https://www.irctctourism.com/"
+               target="_blank"
+               rel="noopener noreferrer"
+               class="explore-link">
+                Explore More <i class="fa-solid fa-arrow-right"></i>
+            </a>
+        </div>
+    </article>
+
+</div>
       </section>
 
       <!-- SEARCH -->
@@ -137,7 +173,7 @@
         <div class="search-panel">
           <div class="search-field">
             <label><i class="fa-solid fa-location-dot"></i> From</label>
-            <input list="stations" id="from" placeholder="e.g. Bhopal">
+            <input list="stations" id="from" placeholder="e.g. Nanded">
           </div>
           <button class="swap-btn" onclick="swapStations()" title="Swap stations"><i class="fa-solid fa-arrow-right-arrow-left"></i></button>
           <div class="search-field">

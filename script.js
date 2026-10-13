@@ -165,10 +165,6 @@ const trains = [
 ];
 
 
-// ===============================
-// PAGE LOAD
-// ===============================
-
 document.addEventListener("DOMContentLoaded", () => {
   setMinimumDate();
   displayBookings();
