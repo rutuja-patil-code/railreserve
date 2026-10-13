@@ -35,8 +35,9 @@
         <button class="nav-link" data-section="pnr" onclick="showSection('pnr')"><i class="fa-solid fa-ticket"></i> PNR</button>
         <button class="nav-link" data-section="bookings" onclick="showSection('bookings')"><i class="fa-solid fa-suitcase-rolling"></i> My Bookings</button>
         <button class="nav-link" data-section="login" onclick="showSection('login')"><i class="fa-solid fa-right-to-bracket"></i> Login</button>
-        <button class="nav-link" data-section="contact" onclick="showSection('contact')"><i class="fa-solid fa-headset"></i> Contact</button>
-      </nav>
+<button class="nav-link" onclick="showContact()">
+  <i class="fas fa-headset"></i> Contact Us
+</button>      </nav>
 
       <button class="theme-toggle" id="theme-toggle" onclick="toggleTheme()" title="Toggle theme">
         <i class="fa-solid fa-moon"></i>
@@ -158,15 +159,15 @@
         </div>
 
         <datalist id="stations">
-          <option value="Bhopal"><option value="Indore"><option value="Delhi"><option value="Mumbai">
+          <option value="Nanded"><option value="Indore"><option value="Delhi"><option value="Mumbai">
           <option value="Pune"><option value="Nagpur"><option value="Hyderabad"><option value="Chennai">
           <option value="Kolkata"><option value="Ayodhya"><option value="Lucknow"><option value="Jaipur">
         </datalist>
 
         <div class="quick-routes">
           <span>Popular:</span>
-          <button onclick="setRoute('Bhopal','Delhi')">Bhopal → Delhi</button>
-          <button onclick="setRoute('Bhopal','Mumbai')">Bhopal → Mumbai</button>
+          <button onclick="setRoute('Nanded','Delhi')">Nanded → Delhi</button>
+          <button onclick="setRoute('Nanded','Mumbai')">Nanded → Mumbai</button>
           <button onclick="setRoute('Delhi','Lucknow')">Delhi → Lucknow</button>
           <button onclick="setRoute('Mumbai','Pune')">Mumbai → Pune</button>
         </div>
@@ -248,30 +249,89 @@
       </section>
 
       <!-- CONTACT -->
-      <section id="contact" class="page-section">
-        <div class="page-header"><div><span class="section-kicker">HELP CENTER</span><h2>Contact & Support</h2><p>Useful links for railway-ticket related assistance.</p></div></div>
-        <div class="contact-grid">
-          <div class="contact-card main-contact">
-            <div class="contact-icon"><i class="fa-solid fa-headset"></i></div>
-            <h3>Railway ticket support</h3>
-            <p>For queries related to tickets booked through official railway channels, use the official support resources.</p>
-            <a class="contact-link" href="https://equery.irctc.co.in/" target="_blank" rel="noopener">Open official enquiry portal <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
-            <div class="support-row"><i class="fa-solid fa-phone"></i><div><strong>Helpline</strong><span>14646 within India</span></div></div>
-            <div class="support-row"><i class="fa-solid fa-envelope"></i><div><strong>Email</strong><span>etickets@irctc.co.in</span></div></div>
-          </div>
-          <div class="contact-card">
-            <div class="contact-icon green-icon"><i class="fa-solid fa-circle-info"></i></div>
-            <h3>About this project</h3>
-            <p>RailReserve is a frontend portfolio/demo project. Bookings and login data are stored locally in your browser.</p>
-            <ul class="check-list">
-              <li><i class="fa-solid fa-check"></i> Responsive interface</li>
-              <li><i class="fa-solid fa-check"></i> Dynamic train search</li>
-              <li><i class="fa-solid fa-check"></i> PNR generation</li>
-              <li><i class="fa-solid fa-check"></i> Local booking management</li>
-            </ul>
-          </div>
-        </div>
-      </section>
+    
+<!-- CONTACT US MODAL -->
+<div id="contactModal" class="contact-overlay"
+     role="dialog"
+     aria-modal="true"
+     aria-labelledby="contactTitle"
+     aria-hidden="true">
+
+  <div class="contact-modal">
+
+    <div class="contact-header">
+      <h2 id="contactTitle">You may contact us</h2>
+      <button class="contact-close"
+              onclick="closeContact()"
+              aria-label="Close Contact Us">
+        &times;
+      </button>
+    </div>
+
+    <div class="contact-body">
+
+      <h2>For Any Queries Related to Railway Tickets</h2>
+
+      <h3>Customer Support</h3>
+      <p>
+        Have questions about your RailReserve booking?
+        Contact our support team using the options below.
+      </p>
+
+      <div class="contact-card">
+        <h3><i class="fas fa-ticket-alt"></i> Ticket Booking</h3>
+        <p>For booking issues, train availability and ticket details.</p>
+        <p>
+          Email:
+          <a href="mailto:support@railreserve.example">
+            support@railreserve.example
+          </a>
+        </p>
+      </div>
+
+      <div class="contact-card">
+        <h3><i class="fas fa-undo"></i> Cancellation & Refunds</h3>
+        <p>For ticket cancellation and refund-related queries.</p>
+        <p>
+          Email:
+          <a href="mailto:refunds@railreserve.example">
+            refunds@railreserve.example
+          </a>
+        </p>
+      </div>
+
+      <div class="contact-card">
+        <h3><i class="fas fa-user"></i> Account Support</h3>
+        <p>For login, registration and account-related issues.</p>
+        <p>
+          Email:
+          <a href="mailto:accounts@railreserve.example">
+            accounts@railreserve.example
+          </a>
+        </p>
+      </div>
+
+      <div class="contact-card">
+        <h3><i class="fas fa-question-circle"></i> General Queries</h3>
+        <p>
+          You can also contact us for suggestions, feedback
+          and other questions about this demo project.
+        </p>
+      </div>
+
+      <hr>
+
+      <h3>RailReserve Customer Support</h3>
+      <p>Support hours: Monday to Saturday, 9 AM – 6 PM</p>
+      <p class="contact-note">
+        RailReserve is a demo project and is not affiliated
+        with IRCTC. The email addresses above are placeholders.
+      </p>
+
+    </div>
+  </div>
+</div>
+
     </main>
 
     <footer class="footer">

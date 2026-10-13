@@ -9,7 +9,7 @@ const trains = [
   {
     name: "Vande Bharat Express",
     number: "22457",
-    from: "Bhopal",
+    from: "Nanded",
     to: "Delhi",
     dep: "05:30",
     arr: "11:40",
@@ -21,7 +21,7 @@ const trains = [
   {
     name: "Shatabdi Express",
     number: "12001",
-    from: "Bhopal",
+    from: "Nanded",
     to: "Delhi",
     dep: "06:00",
     arr: "12:10",
@@ -33,7 +33,7 @@ const trains = [
   {
     name: "Rajdhani Express",
     number: "12437",
-    from: "Bhopal",
+    from: "Nanded",
     to: "Delhi",
     dep: "21:10",
     arr: "05:30",
@@ -45,7 +45,7 @@ const trains = [
   {
     name: "Malwa Express",
     number: "12919",
-    from: "Bhopal",
+    from: "Nanded",
     to: "Delhi",
     dep: "20:20",
     arr: "06:30",
@@ -57,7 +57,7 @@ const trains = [
   {
     name: "Punjab Mail",
     number: "12137",
-    from: "Bhopal",
+    from: "Nanded",
     to: "Mumbai",
     dep: "16:10",
     arr: "07:20",
@@ -141,7 +141,7 @@ const trains = [
   {
     name: "Tejas Express",
     number: "22119",
-    from: "Bhopal",
+    from: "Nanded",
     to: "Indore",
     dep: "07:00",
     arr: "10:05",
@@ -153,7 +153,7 @@ const trains = [
   {
     name: "Jan Shatabdi Express",
     number: "12059",
-    from: "Mumbai",
+    from: "Nanded",
     to: "Pune",
     dep: "05:45",
     arr: "09:00",
@@ -1834,3 +1834,44 @@ function showToast(
   );
 
 }
+
+function showContact() {
+    const modal = document.getElementById("contactModal");
+
+    modal.classList.add("active");
+    modal.setAttribute("aria-hidden", "false");
+    document.body.style.overflow = "hidden";
+
+    modal.querySelector(".contact-close").focus();
+}
+
+function closeContact() {
+    const modal = document.getElementById("contactModal");
+
+    modal.classList.remove("active");
+    modal.setAttribute("aria-hidden", "true");
+    document.body.style.overflow = "";
+
+    // Return focus to the Contact Us tab
+    document.querySelectorAll(
+        '[onclick="showContact()"]'
+    )[0]?.focus();
+}
+
+// Close when clicking outside the popup
+document.getElementById("contactModal")
+    .addEventListener("click", function (event) {
+        if (event.target === this) {
+            closeContact();
+        }
+    });
+
+// Close with Escape key
+document.addEventListener("keydown", function (event) {
+    const modal = document.getElementById("contactModal");
+
+    if (event.key === "Escape" &&
+        modal.classList.contains("active")) {
+        closeContact();
+    }
+});

@@ -66,3 +66,139 @@ body.dark{--bg:#0c1422;--card:#121d2d;--text:#eef4ff;--muted:#91a0b6;--border:#2
 
 @media(max-width:1050px){.menu{gap:0}.nav-link{padding:9px 8px;font-size:12px}.feature-grid{grid-template-columns:repeat(2,1fr)}.stats-grid{grid-template-columns:repeat(2,1fr)}.search-panel{grid-template-columns:1fr 1fr}.swap-btn{display:none}.search-btn{grid-column:1/-1}.train-card{grid-template-columns:1.4fr 1fr auto}.train-card .availability{display:none}}
 @media(max-width:760px){.navbar{padding:11px 4%;flex-wrap:wrap}.mobile-menu{display:block;margin-left:auto}.theme-toggle{order:2}.menu{display:none;order:3;width:100%;flex-direction:column;align-items:stretch}.menu.open{display:flex}.nav-link{text-align:left}.brand{min-width:0}.page-section{padding:27px 4% 45px}.hero{min-height:570px}.hero-content{padding:35px 25px}.hero h1{font-size:42px}.hero p{font-size:14px}.stats-grid,.feature-grid,.destination-grid,.booking-grid,.contact-grid{grid-template-columns:1fr}.section-heading,.page-header{align-items:flex-start;flex-direction:column}.search-panel{grid-template-columns:1fr}.search-btn{grid-column:auto}.booking-layout{grid-template-columns:1fr}.form-grid{grid-template-columns:1fr}.field.full{grid-column:auto}.train-card{grid-template-columns:1fr}.route-times{margin:5px 0}.ticket-info{grid-template-columns:repeat(2,1fr)}.footer{flex-direction:column;align-items:flex-start}.footer p{text-align:left}.auth-card{width:100%;max-width:410px}}
+
+/* CONTACT US OVERLAY */
+.contact-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    background: rgba(0, 0, 0, 0.45);
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+/* Show modal */
+.contact-overlay.active {
+    display: flex;
+}
+
+/* Modal container */
+.contact-modal {
+    width: 100%;
+    max-width: 1050px;
+    max-height: 90vh;
+    background: #fff;
+    border-radius: 4px;
+    overflow: hidden;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.25);
+    display: flex;
+    flex-direction: column;
+}
+
+/* Blue header like IRCTC */
+.contact-header {
+    background: #243f78;
+    color: #fff;
+    padding: 12px 25px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+}
+
+.contact-header h2 {
+    font-size: 20px;
+    margin: 0;
+    color: #fff;
+}
+
+.contact-close {
+    background: transparent;
+    border: none;
+    color: white;
+    font-size: 30px;
+    font-weight: bold;
+    cursor: pointer;
+    line-height: 1;
+}
+
+.contact-close:hover {
+    color: #ffcccc;
+}
+
+/* Scrollable content */
+.contact-body {
+    padding: 25px 30px;
+    overflow-y: auto;
+    color: #222;
+    line-height: 1.6;
+}
+
+.contact-body > h2 {
+    font-size: 26px;
+    margin: 0 0 12px;
+}
+
+.contact-body h3 {
+    margin: 15px 0 8px;
+}
+
+.contact-card {
+    border-bottom: 1px solid #ddd;
+    padding: 10px 0 16px;
+}
+
+.contact-card h3 {
+    color: #243f78;
+}
+
+.contact-card p {
+    margin: 6px 0;
+}
+
+.contact-card a {
+    color: #0645ad;
+    font-weight: 600;
+    overflow-wrap: anywhere;
+}
+
+.contact-card a:hover {
+    color: #e87520;
+}
+
+.contact-note {
+    background: #f2f5fa;
+    border-left: 4px solid #243f78;
+    padding: 12px;
+    font-size: 14px;
+}
+
+/* Mobile responsive */
+@media (max-width: 600px) {
+    .contact-overlay {
+        padding: 8px;
+    }
+
+    .contact-modal {
+        max-height: 95vh;
+    }
+
+    .contact-header {
+        padding: 12px 15px;
+    }
+
+    .contact-header h2 {
+        font-size: 17px;
+    }
+
+    .contact-body {
+        padding: 18px;
+    }
+
+    .contact-body > h2 {
+        font-size: 21px;
+    }
+}
+
